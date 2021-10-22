@@ -49,25 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FORMS\Form1.cs">
+    <Compile Include="Connect_SQLServer.cs" />
+    <Compile Include="FORMS\Frm_Users.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FORMS\Frm_Users.Designer.cs">
+      <DependentUpon>Frm_Users.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Frm_Dashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\Frm_Dashboard.Designer.cs">
-      <DependentUpon>Frm_Dashboard.cs</DependentUpon>
-    </Compile>
+    <Compile Include="SQLControl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FORMS\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Frm_Dashboard.resx">
-      <DependentUpon>Frm_Dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="FORMS\Frm_Users.resx">
+      <DependentUpon>Frm_Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

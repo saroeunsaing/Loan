@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace Loan.FORMS
 {
-    public partial class Frm_Dashboard : Form
+    public partial class Frm_Users : Form
     {
-        public Frm_Dashboard()
+        public Frm_Users()
         {
             InitializeComponent();
+        }
+
+        private void Frm_Users_Load(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
