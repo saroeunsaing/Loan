@@ -17,6 +17,24 @@ namespace Loan.FORMS
         SqlDataReader dr;
         DataTable dt;
 
+        // QUERY PARAMETERS
+        List<SqlParameter> Param = new List<SqlParameter>();
+        Int32 RecordCount;
+        string Exception;
+
+        public void ExecQuery(String Query , Boo ReturnIdentity As Boolean = False)
+        {
+
+        }
+
+         // ADD PARAMS
+        public  void addParam(String Name, Object Value)
+        {
+            SqlParameter NewParam = new SqlParameter(Name, Value);
+            Param.Add(NewParam);
+        }
+    
+
 
         public void Retrive(string qty, DataGridView dgv)
         {

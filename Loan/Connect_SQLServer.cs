@@ -12,7 +12,7 @@ namespace Loan
 
         //Server Configuration
         private readonly string datasource  = "GURUTECH";
-        private readonly string database = "Coffee_Shop";
+        private readonly string database = "loan";
         private readonly string user_ID  = "sa";
         private readonly string pwd  = "123";
 
