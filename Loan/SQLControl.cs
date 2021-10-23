@@ -22,9 +22,42 @@ namespace Loan.FORMS
         Int32 RecordCount;
         string Exception;
 
-        public void ExecQuery(String Query , Boo ReturnIdentity As Boolean = False)
+        public void ExecQuery(String Query , Boolean ReturnIdentity )
         {
+        //    ' RESET QUERY STATS
+        //RecordCount = 0
+        //Exception = ""
 
+        //Try
+        //    cn.Open()
+        //    ' CREATE DB COMMAND
+        //    cmd = New SqlCommand(Query, cn)
+        //    ' LOAD PARAMS INTO DB COMMAND
+        //    Params.ForEach(Sub(p) cmd.Parameters.Add(p))
+        //    ' CLEAR PARAM LIST
+        //    Params.Clear()
+        //    ' EXECUTE COMMAND & FILL DATASET
+        //    dt = New DataTable
+        //    da = New SqlDataAdapter(cmd)
+        //    RecordCount = da.Fill(dt)
+
+        //    If ReturnIdentity = True Then
+        //        Dim ReturnQuery As String = "SELECT @@IDENTITY As LastID;"
+        //        ' @@IDENTITY - SESSION
+        //        ' SCOPE_IDENTITY() - SESSION & SCOPE
+        //        ' IDENT_CURRENT(tablename) - LAST IDENT IN TABLE, ANY SCOPE, ANY SESSION
+        //        cmd = New SqlCommand(ReturnQuery, cn)
+        //        dt = New DataTable
+        //        da = New SqlDataAdapter(cmd)
+        //        RecordCount = da.Fill(dt)
+        //    End If
+        //Catch ex As Exception
+        //    ' CAPTURE ERROR
+        //    Exception = "ExecQuery Error: " & vbNewLine & ex.Message
+        //Finally
+        //    ' CLOSE CONNECTION
+        //    If cn.State = ConnectionState.Open Then cn.Close()
+        //End Try
         }
 
          // ADD PARAMS
