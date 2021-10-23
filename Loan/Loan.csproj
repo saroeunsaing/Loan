@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connect_SQLServer.cs" />
+    <Compile Include="FORMS\Frm_CreditType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Frm_CreditType.Designer.cs">
+      <DependentUpon>Frm_CreditType.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\Frm_Customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="SQLControl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FORMS\Frm_CreditType.resx">
+      <DependentUpon>Frm_CreditType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Frm_Customer.resx">
       <DependentUpon>Frm_Customer.cs</DependentUpon>
     </EmbeddedResource>
