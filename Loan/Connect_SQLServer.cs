@@ -11,12 +11,12 @@ namespace Loan
 
 
         //Server Configuration
-        private readonly string datasource  = "GURUTECH";
-        private readonly string database = "loan";
-        private readonly string user_ID  = "sa";
-        private readonly string pwd  = "123";
+        private  string datasource  = "GURUTECH";
+        private  string database = "loan";
+        private  string user_ID  = "sa";
+        private  string pwd  = "123";
 
-        private readonly string cs;
+        private  string cs;
 
 
         public Connect_SQLServer()

@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connect_SQLServer.cs" />
+    <Compile Include="CueBannerTextCode.cs" />
     <Compile Include="FORMS\Frm_CreditType.cs">
       <SubType>Form</SubType>
     </Compile>

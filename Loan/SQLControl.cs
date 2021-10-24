@@ -6,74 +6,107 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Runtime.InteropServices;
 
 namespace Loan.FORMS
 {
     class SQLControl : Connect_SQLServer
     {
-        SqlConnection cn;
-        SqlCommand cmd;
-        SqlDataAdapter da;
-        SqlDataReader dr;
-        DataTable dt;
+        public SqlConnection cn;
+        public SqlCommand cmd;
+        public SqlDataAdapter da;
+        public SqlDataReader dr;
+        public DataTable dt;
+        public DataSet ds;
+
+        
+        #region EXECUTEQUERY   
+
 
         // QUERY PARAMETERS
-        List<SqlParameter> Param = new List<SqlParameter>();
-        Int32 RecordCount;
-        string Exception;
+        public List<SqlParameter> Params = new List<SqlParameter>();
+        public int RecordCount;
+        public string Exception;
+        public string ReturnQuery;
 
-        public void ExecQuery(String Query , Boolean ReturnIdentity )
+        public void ExecQuery(String Query , Boolean ReturnIdentity = false)
         {
-        //    ' RESET QUERY STATS
-        //RecordCount = 0
-        //Exception = ""
+            //RESET QUERY STATS
+            RecordCount = 0;
+            Exception = "";
 
-        //Try
-        //    cn.Open()
-        //    ' CREATE DB COMMAND
-        //    cmd = New SqlCommand(Query, cn)
-        //    ' LOAD PARAMS INTO DB COMMAND
-        //    Params.ForEach(Sub(p) cmd.Parameters.Add(p))
-        //    ' CLEAR PARAM LIST
-        //    Params.Clear()
-        //    ' EXECUTE COMMAND & FILL DATASET
-        //    dt = New DataTable
-        //    da = New SqlDataAdapter(cmd)
-        //    RecordCount = da.Fill(dt)
+            using (cn = GetConnection()) 
+            {
+                try
+                {
+                    cn.Open();
+                    // CREATE DB COMMAND
+                    cmd = new SqlCommand(Query, cn);
+                    // LOAD PARAMS INTO DB COMMAND
+                    Params.ForEach(p => cmd.Parameters.Add(p));
+                    // CLEAR PARAM LIST
+                    Params.Clear();
+                    // EXECUTE COMMAND & FILL DATASET
+                    dt = new DataTable();
+               
 
-        //    If ReturnIdentity = True Then
-        //        Dim ReturnQuery As String = "SELECT @@IDENTITY As LastID;"
-        //        ' @@IDENTITY - SESSION
-        //        ' SCOPE_IDENTITY() - SESSION & SCOPE
-        //        ' IDENT_CURRENT(tablename) - LAST IDENT IN TABLE, ANY SCOPE, ANY SESSION
-        //        cmd = New SqlCommand(ReturnQuery, cn)
-        //        dt = New DataTable
-        //        da = New SqlDataAdapter(cmd)
-        //        RecordCount = da.Fill(dt)
-        //    End If
-        //Catch ex As Exception
-        //    ' CAPTURE ERROR
-        //    Exception = "ExecQuery Error: " & vbNewLine & ex.Message
-        //Finally
-        //    ' CLOSE CONNECTION
-        //    If cn.State = ConnectionState.Open Then cn.Close()
-        //End Try
+                    da = new SqlDataAdapter(cmd);
+                    RecordCount = da.Fill(dt);
+
+                if(ReturnIdentity == true) 
+                  {
+                        ReturnQuery = "SELECT @@IDENTITY As LastID;";
+                        // @@IDENTITY - SESSION
+                        // SCOPE_IDENTITY() - SESSION & SCOPE
+                        // IDENT_CURRENT(tablename) - LAST IDENT IN TABLE, ANY SCOPE, ANY SESSION
+                        cmd = new SqlCommand(ReturnQuery, cn);
+                        dt = new DataTable();
+                        da = new SqlDataAdapter(cmd);
+                        RecordCount = da.Fill(dt);
+                  }
+
+                }
+                catch (Exception ex)
+                {
+                    // CAPTURE ERROR
+                    Exception = "ExecQuery Error: \n" + ex.Message;
+                }
+                finally
+                {
+                    if (cn.State == ConnectionState.Open)
+                    {
+                        cn.Close();
+                    }
+                }
+            }
         }
-
-         // ADD PARAMS
-        public  void addParam(String Name, Object Value)
+        
+        // ADD PARAMS
+        public void AddParam(String Name, Object Value)
         {
             SqlParameter NewParam = new SqlParameter(Name, Value);
-            Param.Add(NewParam);
+            Params.Add(NewParam);
         }
-    
+        public Boolean HasException(Boolean Report  = false)
+        {
+            if(String.IsNullOrEmpty(Exception))
+            {
+                return false;
+            }
+            if(Report == true)
+            {
+                MessageBox.Show(Exception, "Exception:");
+            }
 
+            return true;
+        }
+
+        #endregion
 
         public void Retrive(string qty, DataGridView dgv)
         {
             using (var cn = GetConnection())
             {
-
                 cmd = new SqlCommand(qty, cn);
                 da = new SqlDataAdapter(cmd);
 
@@ -116,4 +149,5 @@ namespace Loan.FORMS
             }
         }
     }
+
 }
