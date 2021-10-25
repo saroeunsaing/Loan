@@ -16,7 +16,7 @@ namespace Loan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Loan.FORMS.Frm_CreditType());
+            Application.Run(new Loan.FORMS.Frm_Dashboard());
         }
     }
 }

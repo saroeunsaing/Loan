@@ -45,7 +45,7 @@ namespace Loan.FORMS
             this.Btn_Exit.IconColor = System.Drawing.Color.LightCoral;
             this.Btn_Exit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_Exit.IconSize = 30;
-            this.Btn_Exit.Location = new System.Drawing.Point(562, 3);
+            this.Btn_Exit.Location = new System.Drawing.Point(562, 0);
             this.Btn_Exit.Name = "Btn_Exit";
             this.Btn_Exit.Size = new System.Drawing.Size(35, 35);
             this.Btn_Exit.TabIndex = 6;
@@ -55,7 +55,7 @@ namespace Loan.FORMS
             // 
             this.panel_Content.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_Content.Controls.Add(this.Btn_Exit);
-            this.panel_Content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Content.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Content.Location = new System.Drawing.Point(350, 0);
             this.panel_Content.Name = "panel_Content";
             this.panel_Content.Size = new System.Drawing.Size(600, 565);

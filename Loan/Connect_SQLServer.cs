@@ -11,17 +11,18 @@ namespace Loan
 
 
         //Server Configuration
-        private  string datasource  = "GURUTECH";
+        private  string datasource  = "Seanghai";
         private  string database = "loan";
-        private  string user_ID  = "sa";
-        private  string pwd  = "123";
+        private  string user_ID  = "";
+        private  string pwd  = "";
 
         private  string cs;
 
 
         public Connect_SQLServer()
         {
-            cs = "Data Source=" + datasource + ";Initial Catalog=" + database + "; User ID=" + user_ID + ";Password=" + pwd;
+            //cs = "Data Source=" + datasource + ";Initial Catalog=" + database + "; User ID=" + user_ID + ";Password=" + pwd;
+            cs = "data source=" + datasource + ";initial catalog = " + database + "; persist security info = True;Integrated Security = SSPI;";
         }
         protected SqlConnection GetConnection()
         {
