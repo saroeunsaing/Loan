@@ -36,12 +36,11 @@ namespace Loan.FORMS
         
         private void SAVE_Click(object sender, EventArgs e)
         {
+            
             SQL.AddParam("@id", TXT_ID.Text);
             SQL.AddParam("@namekh", TXT_NAMEKH.Text);
             SQL.AddParam("@nameen", TXT_NAMEEN.Text);
-
-            SQL.ExecQuery("INSERT INTO type VALUES (@id,@namekh,@nameen);", true);
-            
+            SQL.ExecQuery("INSERT INTO type VALUES (@id,@namekh,@nameen);", true);        
             //REPORT & ABORT ON ERRORS
             if(SQL.HasException(true)){} 
 

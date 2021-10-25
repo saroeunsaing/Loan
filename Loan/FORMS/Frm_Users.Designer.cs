@@ -35,6 +35,7 @@ namespace Loan.FORMS
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.Btn_Exit = new FontAwesome.Sharp.IconButton();
             this.panel_Left = new System.Windows.Forms.Panel();
+            this.LOGO = new FontAwesome.Sharp.IconPictureBox();
             this.panel_Right = new System.Windows.Forms.Panel();
             this.CANCEL = new FontAwesome.Sharp.IconButton();
             this.LOGIN = new FontAwesome.Sharp.IconButton();
@@ -44,11 +45,10 @@ namespace Loan.FORMS
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.TXT_USERNAME = new System.Windows.Forms.TextBox();
-            this.LOGO = new FontAwesome.Sharp.IconPictureBox();
             this.panel_Title.SuspendLayout();
             this.panel_Left.SuspendLayout();
-            this.panel_Right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LOGO)).BeginInit();
+            this.panel_Right.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Title
@@ -137,6 +137,20 @@ namespace Loan.FORMS
             this.panel_Left.Name = "panel_Left";
             this.panel_Left.Size = new System.Drawing.Size(350, 470);
             this.panel_Left.TabIndex = 1;
+            // 
+            // LOGO
+            // 
+            this.LOGO.BackColor = System.Drawing.Color.MistyRose;
+            this.LOGO.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LOGO.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.LOGO.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.LOGO.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.LOGO.IconSize = 171;
+            this.LOGO.Location = new System.Drawing.Point(83, 31);
+            this.LOGO.Name = "LOGO";
+            this.LOGO.Size = new System.Drawing.Size(171, 191);
+            this.LOGO.TabIndex = 0;
+            this.LOGO.TabStop = false;
             // 
             // panel_Right
             // 
@@ -261,20 +275,7 @@ namespace Loan.FORMS
             this.TXT_USERNAME.Name = "TXT_USERNAME";
             this.TXT_USERNAME.Size = new System.Drawing.Size(284, 30);
             this.TXT_USERNAME.TabIndex = 0;
-            // 
-            // LOGO
-            // 
-            this.LOGO.BackColor = System.Drawing.Color.MistyRose;
-            this.LOGO.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LOGO.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.LOGO.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.LOGO.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.LOGO.IconSize = 171;
-            this.LOGO.Location = new System.Drawing.Point(83, 31);
-            this.LOGO.Name = "LOGO";
-            this.LOGO.Size = new System.Drawing.Size(171, 191);
-            this.LOGO.TabIndex = 0;
-            this.LOGO.TabStop = false;
+            this.TXT_USERNAME.TextChanged += new System.EventHandler(this.TXT_USERNAME_TextChanged);
             // 
             // Frm_Users
             // 
@@ -291,9 +292,9 @@ namespace Loan.FORMS
             this.Load += new System.EventHandler(this.Frm_Users_Load);
             this.panel_Title.ResumeLayout(false);
             this.panel_Left.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LOGO)).EndInit();
             this.panel_Right.ResumeLayout(false);
             this.panel_Right.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LOGO)).EndInit();
             this.ResumeLayout(false);
 
         }

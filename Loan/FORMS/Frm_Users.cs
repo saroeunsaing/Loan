@@ -27,5 +27,10 @@ namespace Loan.FORMS
         {
 
         }
+
+        private void TXT_USERNAME_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

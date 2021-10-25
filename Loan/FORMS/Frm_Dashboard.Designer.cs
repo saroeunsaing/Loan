@@ -30,11 +30,13 @@ namespace Loan.FORMS
         private void InitializeComponent()
         {
             this.Panel_Title = new System.Windows.Forms.Panel();
-            this.Btn_Maximize = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.Btn_Menuhide = new FontAwesome.Sharp.IconButton();
+            this.Btn_Maximize = new FontAwesome.Sharp.IconButton();
             this.BTN_Minimize = new FontAwesome.Sharp.IconButton();
             this.Btn_Exit = new FontAwesome.Sharp.IconButton();
             this.Btn_Restore = new FontAwesome.Sharp.IconButton();
+            this.Btn_Menushow = new FontAwesome.Sharp.IconButton();
             this.Panel_Menu = new System.Windows.Forms.Panel();
             this.LOGO = new FontAwesome.Sharp.IconPictureBox();
             this.TWITTER = new FontAwesome.Sharp.IconButton();
@@ -48,9 +50,7 @@ namespace Loan.FORMS
             this.CUSTOMER = new FontAwesome.Sharp.IconButton();
             this.EMPLOYEE = new FontAwesome.Sharp.IconButton();
             this.HOME = new FontAwesome.Sharp.IconButton();
-            this.Btn_Menushow = new FontAwesome.Sharp.IconButton();
             this.Panel_Content = new System.Windows.Forms.Panel();
-            this.Btn_Menuhide = new FontAwesome.Sharp.IconButton();
             this.Panel_Title.SuspendLayout();
             this.Panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LOGO)).BeginInit();
@@ -72,23 +72,6 @@ namespace Loan.FORMS
             this.Panel_Title.Size = new System.Drawing.Size(1200, 35);
             this.Panel_Title.TabIndex = 0;
             // 
-            // Btn_Maximize
-            // 
-            this.Btn_Maximize.FlatAppearance.BorderSize = 0;
-            this.Btn_Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Maximize.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
-            this.Btn_Maximize.ForeColor = System.Drawing.Color.MistyRose;
-            this.Btn_Maximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.Btn_Maximize.IconColor = System.Drawing.Color.LightCoral;
-            this.Btn_Maximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_Maximize.IconSize = 30;
-            this.Btn_Maximize.Location = new System.Drawing.Point(1131, 3);
-            this.Btn_Maximize.Name = "Btn_Maximize";
-            this.Btn_Maximize.Size = new System.Drawing.Size(35, 35);
-            this.Btn_Maximize.TabIndex = 7;
-            this.Btn_Maximize.UseVisualStyleBackColor = true;
-            this.Btn_Maximize.Click += new System.EventHandler(this.Btn_Maximize_Click);
-            // 
             // iconButton5
             // 
             this.iconButton5.FlatAppearance.BorderSize = 0;
@@ -107,8 +90,47 @@ namespace Loan.FORMS
             this.iconButton5.Text = "ប្រព័ន្ធគ្រប់គ្រងឥណទាន";
             this.iconButton5.UseVisualStyleBackColor = true;
             // 
+            // Btn_Menuhide
+            // 
+            this.Btn_Menuhide.FlatAppearance.BorderSize = 0;
+            this.Btn_Menuhide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Menuhide.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
+            this.Btn_Menuhide.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Btn_Menuhide.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.Btn_Menuhide.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.Btn_Menuhide.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Menuhide.IconSize = 30;
+            this.Btn_Menuhide.Location = new System.Drawing.Point(3, 0);
+            this.Btn_Menuhide.Name = "Btn_Menuhide";
+            this.Btn_Menuhide.Size = new System.Drawing.Size(35, 35);
+            this.Btn_Menuhide.TabIndex = 22;
+            this.Btn_Menuhide.UseVisualStyleBackColor = true;
+            this.Btn_Menuhide.Click += new System.EventHandler(this.Btn_Menuhide_Click);
+            // 
+            // Btn_Maximize
+            // 
+            this.Btn_Maximize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_Maximize.FlatAppearance.BorderSize = 0;
+            this.Btn_Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Maximize.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
+            this.Btn_Maximize.ForeColor = System.Drawing.Color.MistyRose;
+            this.Btn_Maximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.Btn_Maximize.IconColor = System.Drawing.Color.LightCoral;
+            this.Btn_Maximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Maximize.IconSize = 30;
+            this.Btn_Maximize.Location = new System.Drawing.Point(1131, 3);
+            this.Btn_Maximize.Name = "Btn_Maximize";
+            this.Btn_Maximize.Size = new System.Drawing.Size(35, 35);
+            this.Btn_Maximize.TabIndex = 7;
+            this.Btn_Maximize.UseVisualStyleBackColor = true;
+            this.Btn_Maximize.Click += new System.EventHandler(this.Btn_Maximize_Click);
+            // 
             // BTN_Minimize
             // 
+            this.BTN_Minimize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_Minimize.FlatAppearance.BorderSize = 0;
             this.BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_Minimize.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
@@ -126,6 +148,8 @@ namespace Loan.FORMS
             // 
             // Btn_Exit
             // 
+            this.Btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_Exit.FlatAppearance.BorderSize = 0;
             this.Btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Exit.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
@@ -157,6 +181,23 @@ namespace Loan.FORMS
             this.Btn_Restore.TabIndex = 5;
             this.Btn_Restore.UseVisualStyleBackColor = true;
             this.Btn_Restore.Click += new System.EventHandler(this.Btn_Restore_Click);
+            // 
+            // Btn_Menushow
+            // 
+            this.Btn_Menushow.FlatAppearance.BorderSize = 0;
+            this.Btn_Menushow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Menushow.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
+            this.Btn_Menushow.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Btn_Menushow.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.Btn_Menushow.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.Btn_Menushow.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Menushow.IconSize = 30;
+            this.Btn_Menushow.Location = new System.Drawing.Point(3, 3);
+            this.Btn_Menushow.Name = "Btn_Menushow";
+            this.Btn_Menushow.Size = new System.Drawing.Size(35, 35);
+            this.Btn_Menushow.TabIndex = 8;
+            this.Btn_Menushow.UseVisualStyleBackColor = true;
+            this.Btn_Menushow.Click += new System.EventHandler(this.Btn_Menushow_Click);
             // 
             // Panel_Menu
             // 
@@ -327,6 +368,7 @@ namespace Loan.FORMS
             this.LOGOUT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LOGOUT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.LOGOUT.UseVisualStyleBackColor = true;
+            this.LOGOUT.Click += new System.EventHandler(this.LOGOUT_Click);
             // 
             // LOAN
             // 
@@ -411,23 +453,6 @@ namespace Loan.FORMS
             this.HOME.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.HOME.UseVisualStyleBackColor = true;
             // 
-            // Btn_Menushow
-            // 
-            this.Btn_Menushow.FlatAppearance.BorderSize = 0;
-            this.Btn_Menushow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Menushow.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
-            this.Btn_Menushow.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Btn_Menushow.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.Btn_Menushow.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.Btn_Menushow.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_Menushow.IconSize = 30;
-            this.Btn_Menushow.Location = new System.Drawing.Point(3, 3);
-            this.Btn_Menushow.Name = "Btn_Menushow";
-            this.Btn_Menushow.Size = new System.Drawing.Size(35, 35);
-            this.Btn_Menushow.TabIndex = 8;
-            this.Btn_Menushow.UseVisualStyleBackColor = true;
-            this.Btn_Menushow.Click += new System.EventHandler(this.Btn_Menushow_Click);
-            // 
             // Panel_Content
             // 
             this.Panel_Content.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -437,23 +462,6 @@ namespace Loan.FORMS
             this.Panel_Content.Size = new System.Drawing.Size(950, 565);
             this.Panel_Content.TabIndex = 2;
             this.Panel_Content.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Content_Paint);
-            // 
-            // Btn_Menuhide
-            // 
-            this.Btn_Menuhide.FlatAppearance.BorderSize = 0;
-            this.Btn_Menuhide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Menuhide.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
-            this.Btn_Menuhide.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Btn_Menuhide.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.Btn_Menuhide.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.Btn_Menuhide.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_Menuhide.IconSize = 30;
-            this.Btn_Menuhide.Location = new System.Drawing.Point(3, 0);
-            this.Btn_Menuhide.Name = "Btn_Menuhide";
-            this.Btn_Menuhide.Size = new System.Drawing.Size(35, 35);
-            this.Btn_Menuhide.TabIndex = 22;
-            this.Btn_Menuhide.UseVisualStyleBackColor = true;
-            this.Btn_Menuhide.Click += new System.EventHandler(this.Btn_Menuhide_Click);
             // 
             // Frm_Dashboard
             // 

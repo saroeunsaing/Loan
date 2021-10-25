@@ -119,5 +119,10 @@ namespace Loan.FORMS
             Btn_Maximize.Visible = false;
             this.WindowState = FormWindowState.Maximized;
         }
+
+        private void LOGOUT_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
