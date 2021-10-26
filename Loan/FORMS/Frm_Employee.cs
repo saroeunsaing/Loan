@@ -41,13 +41,7 @@ namespace Loan.FORMS
             CueBannerTextCode.SetCueText(TXT_ADDRESS, "អាស័យដ្ឋាន");
         }
 
-        private void Frm_Employee_Load(object sender, EventArgs e)
-        {
-            SQL.Retrive("select * from Employees", DGV_DATAEMP);
-            headdvg();
-            placeholder();
-
-        }
+       
 
 
         private void Btn_Exit_Click(object sender, EventArgs e)
@@ -79,7 +73,62 @@ namespace Loan.FORMS
             SQL.Retrive("select * from Employees", DGV_DATAEMP);
         }
 
-        private void DVG_DATAEMP(object sender, DataGridViewCellEventArgs e)
+       
+
+        private void TXT_NO_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EDIT_Click(object sender, EventArgs e)
+        {
+            SQL.AddParam("@no", TXT_NO.Text);
+            SQL.AddParam("@namekh", TXT_NAMEKH.Text);
+            SQL.AddParam("@nameen", TXT_NAMEEN.Text);
+            if (RadioMale.Checked)
+                SQL.AddParam("@gender", "Male");
+            else
+                SQL.AddParam("@gender", "Female");
+            SQL.AddParam("@dob", dob.Value);
+            SQL.AddParam("@phone", TXT_PHONE.Text);
+            SQL.AddParam("@email", TXT_EMAIL.Text);
+            SQL.AddParam("@address", TXT_ADDRESS.Text);
+            SQL.ExecQuery("UPDATE Employees SET​​ Namekh=@namekh,Nameen=@nameen,Gender=@gender,Dob=@dob,phone=@phone,email=@email,address=@address WHERE No=@no);", true);
+           //SQL.ExecQuery("UPDATE type SET namekh=@namekh,nameen=@nameen WHERE id = @id;", true);
+
+            //REPORT & ABORT ON ERRORS
+            if (SQL.HasException(true)) { }
+
+            MessageBox.Show("កែប្រែបានជោគជ័យ");
+            SQL.Retrive("select * from Employees", DGV_DATAEMP);
+        }
+
+        private void DELETE_Click(object sender, EventArgs e)
+        {
+            SQL.AddParam("@no", TXT_NO.Text);
+            SQL.ExecQuery("DELETE FROM Employees WHERE no = @no;", true);
+            if (SQL.HasException(true)) { }
+
+            MessageBox.Show("លុបបានជោគជ័យ");
+            SQL.Retrive("select * from Employees", DGV_DATAEMP);
+
+        }
+
+        private void CLEAR_Click(object sender, EventArgs e)
+        {
+            TXT_NO.Text = "";
+            TXT_NAMEKH.Text = "";
+            TXT_NAMEEN.Text = "";
+            RadioMale.Checked = false;
+            RadioFemale.Checked = false;
+            dob.Text = "";
+            TXT_PHONE.Text = "";
+            TXT_EMAIL.Text = "";
+            TXT_ADDRESS.Text = "";
+
+        }
+
+        private void DGV_DATAEMP_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -89,7 +138,7 @@ namespace Loan.FORMS
                 TXT_NO.Text = row.Cells["no"].Value.ToString();
                 TXT_NAMEKH.Text = row.Cells["namekh"].Value.ToString();
                 TXT_NAMEEN.Text = row.Cells["nameen"].Value.ToString();
-                if ( row.Cells["gender"].Value.ToString() == "Female")
+                if (row.Cells["gender"].Value.ToString() == "Female")
                 {
                     RadioFemale.Checked = true;
                 }
@@ -98,7 +147,7 @@ namespace Loan.FORMS
                     RadioMale.Checked = true;
                 }
                 //TXT_GENDER.Text = row.Cells["gender"].Value.ToString();
-                dob.Text = row.Cells["dob"].Value.ToString(); 
+                dob.Text = row.Cells["dob"].Value.ToString();
                 TXT_PHONE.Text = row.Cells["phone"].Value.ToString();
                 TXT_EMAIL.Text = row.Cells["email"].Value.ToString();
                 TXT_ADDRESS.Text = row.Cells["address"].Value.ToString();
@@ -106,9 +155,11 @@ namespace Loan.FORMS
             }
         }
 
-        private void TXT_NO_TextChanged(object sender, EventArgs e)
+        private void Frm_Employee_Load(object sender, EventArgs e)
         {
-
+            SQL.Retrive("select * from Employees", DGV_DATAEMP);
+            headdvg();
+            placeholder();
         }
     }
 }

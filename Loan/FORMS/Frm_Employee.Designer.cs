@@ -33,6 +33,14 @@ namespace Loan.FORMS
             this.panel_Content = new System.Windows.Forms.Panel();
             this.DGV_DATAEMP = new System.Windows.Forms.DataGridView();
             this.panel_Left = new System.Windows.Forms.Panel();
+            this.CLEAR = new FontAwesome.Sharp.IconButton();
+            this.iconButton8 = new FontAwesome.Sharp.IconButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.TXT_NO = new System.Windows.Forms.TextBox();
+            this.gender = new FontAwesome.Sharp.IconButton();
+            this.RadioFemale = new System.Windows.Forms.RadioButton();
+            this.RadioMale = new System.Windows.Forms.RadioButton();
+            this.dob = new System.Windows.Forms.DateTimePicker();
             this.panel7 = new System.Windows.Forms.Panel();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.TXT_EMAIL = new System.Windows.Forms.TextBox();
@@ -53,13 +61,6 @@ namespace Loan.FORMS
             this.panel4 = new System.Windows.Forms.Panel();
             this.TXT_NAMEKH = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.dob = new System.Windows.Forms.DateTimePicker();
-            this.RadioMale = new System.Windows.Forms.RadioButton();
-            this.RadioFemale = new System.Windows.Forms.RadioButton();
-            this.gender = new FontAwesome.Sharp.IconButton();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.TXT_NO = new System.Windows.Forms.TextBox();
             this.panel_Content.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DATAEMP)).BeginInit();
             this.panel_Left.SuspendLayout();
@@ -87,13 +88,10 @@ namespace Loan.FORMS
             this.panel_Content.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_Content.Controls.Add(this.DGV_DATAEMP);
             this.panel_Content.Controls.Add(this.Btn_Exit);
-            this.panel_Content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Content.Location = new System.Drawing.Point(346, 0);
             this.panel_Content.Name = "panel_Content";
             this.panel_Content.Size = new System.Drawing.Size(604, 565);
             this.panel_Content.TabIndex = 8;
-            this.panel_Content.Click += new System.EventHandler(this.Frm_Employee_Load);
-            this.panel_Content.Enter += new System.EventHandler(this.Frm_Employee_Load);
             // 
             // DGV_DATAEMP
             // 
@@ -107,13 +105,14 @@ namespace Loan.FORMS
             this.DGV_DATAEMP.Name = "DGV_DATAEMP";
             this.DGV_DATAEMP.RowHeadersVisible = false;
             this.DGV_DATAEMP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_DATAEMP.Size = new System.Drawing.Size(594, 490);
+            this.DGV_DATAEMP.Size = new System.Drawing.Size(590, 490);
             this.DGV_DATAEMP.TabIndex = 7;
-            this.DGV_DATAEMP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVG_DATAEMP);
+            this.DGV_DATAEMP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_DATAEMP_CellContentClick);
             // 
             // panel_Left
             // 
             this.panel_Left.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel_Left.Controls.Add(this.CLEAR);
             this.panel_Left.Controls.Add(this.iconButton8);
             this.panel_Left.Controls.Add(this.panel5);
             this.panel_Left.Controls.Add(this.TXT_NO);
@@ -146,6 +145,109 @@ namespace Loan.FORMS
             this.panel_Left.Name = "panel_Left";
             this.panel_Left.Size = new System.Drawing.Size(346, 565);
             this.panel_Left.TabIndex = 7;
+            // 
+            // CLEAR
+            // 
+            this.CLEAR.FlatAppearance.BorderSize = 0;
+            this.CLEAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CLEAR.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
+            this.CLEAR.ForeColor = System.Drawing.Color.LightCoral;
+            this.CLEAR.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.CLEAR.IconColor = System.Drawing.Color.DarkSalmon;
+            this.CLEAR.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.CLEAR.IconSize = 30;
+            this.CLEAR.Location = new System.Drawing.Point(181, 527);
+            this.CLEAR.Name = "CLEAR";
+            this.CLEAR.Size = new System.Drawing.Size(159, 35);
+            this.CLEAR.TabIndex = 44;
+            this.CLEAR.Text = "សំអាត | CLEAR";
+            this.CLEAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.CLEAR.UseVisualStyleBackColor = true;
+            this.CLEAR.Click += new System.EventHandler(this.CLEAR_Click);
+            // 
+            // iconButton8
+            // 
+            this.iconButton8.FlatAppearance.BorderSize = 0;
+            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton8.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
+            this.iconButton8.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.iconButton8.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton8.IconSize = 30;
+            this.iconButton8.Location = new System.Drawing.Point(3, 26);
+            this.iconButton8.Name = "iconButton8";
+            this.iconButton8.Size = new System.Drawing.Size(32, 35);
+            this.iconButton8.TabIndex = 42;
+            this.iconButton8.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.ForeColor = System.Drawing.Color.MistyRose;
+            this.panel5.Location = new System.Drawing.Point(2, 60);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(343, 3);
+            this.panel5.TabIndex = 41;
+            // 
+            // TXT_NO
+            // 
+            this.TXT_NO.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.TXT_NO.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TXT_NO.Font = new System.Drawing.Font("Khmer OS Siemreap", 12F);
+            this.TXT_NO.ForeColor = System.Drawing.Color.Black;
+            this.TXT_NO.Location = new System.Drawing.Point(41, 27);
+            this.TXT_NO.Name = "TXT_NO";
+            this.TXT_NO.Size = new System.Drawing.Size(299, 30);
+            this.TXT_NO.TabIndex = 43;
+            this.TXT_NO.TextChanged += new System.EventHandler(this.TXT_NO_TextChanged);
+            // 
+            // gender
+            // 
+            this.gender.FlatAppearance.BorderSize = 0;
+            this.gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gender.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
+            this.gender.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.gender.IconChar = FontAwesome.Sharp.IconChar.Male;
+            this.gender.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.gender.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.gender.IconSize = 30;
+            this.gender.Location = new System.Drawing.Point(-1, 187);
+            this.gender.Name = "gender";
+            this.gender.Size = new System.Drawing.Size(83, 49);
+            this.gender.TabIndex = 40;
+            this.gender.Text = "ភេទ";
+            this.gender.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.gender.UseVisualStyleBackColor = true;
+            // 
+            // RadioFemale
+            // 
+            this.RadioFemale.AutoSize = true;
+            this.RadioFemale.Location = new System.Drawing.Point(216, 195);
+            this.RadioFemale.Name = "RadioFemale";
+            this.RadioFemale.Size = new System.Drawing.Size(50, 31);
+            this.RadioFemale.TabIndex = 39;
+            this.RadioFemale.TabStop = true;
+            this.RadioFemale.Text = "ស្រី";
+            this.RadioFemale.UseVisualStyleBackColor = true;
+            // 
+            // RadioMale
+            // 
+            this.RadioMale.AutoSize = true;
+            this.RadioMale.Location = new System.Drawing.Point(92, 195);
+            this.RadioMale.Name = "RadioMale";
+            this.RadioMale.Size = new System.Drawing.Size(60, 31);
+            this.RadioMale.TabIndex = 38;
+            this.RadioMale.TabStop = true;
+            this.RadioMale.Text = "ប្រុស";
+            this.RadioMale.UseVisualStyleBackColor = true;
+            // 
+            // dob
+            // 
+            this.dob.Location = new System.Drawing.Point(44, 250);
+            this.dob.Name = "dob";
+            this.dob.Size = new System.Drawing.Size(296, 34);
+            this.dob.TabIndex = 37;
             // 
             // panel7
             // 
@@ -193,13 +295,14 @@ namespace Loan.FORMS
             this.DELETE.IconColor = System.Drawing.Color.DarkSalmon;
             this.DELETE.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.DELETE.IconSize = 30;
-            this.DELETE.Location = new System.Drawing.Point(82, 527);
+            this.DELETE.Location = new System.Drawing.Point(3, 530);
             this.DELETE.Name = "DELETE";
             this.DELETE.Size = new System.Drawing.Size(159, 35);
             this.DELETE.TabIndex = 19;
             this.DELETE.Text = "លុប | DELETE";
             this.DELETE.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DELETE.UseVisualStyleBackColor = true;
+            this.DELETE.Click += new System.EventHandler(this.DELETE_Click);
             // 
             // panel6
             // 
@@ -227,6 +330,7 @@ namespace Loan.FORMS
             this.EDIT.Text = "កែប្រែ | EDIT";
             this.EDIT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.EDIT.UseVisualStyleBackColor = true;
+            this.EDIT.Click += new System.EventHandler(this.EDIT_Click);
             // 
             // iconButton6
             // 
@@ -407,90 +511,6 @@ namespace Loan.FORMS
             this.iconButton1.TabIndex = 19;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
-            // dob
-            // 
-            this.dob.Location = new System.Drawing.Point(44, 250);
-            this.dob.Name = "dob";
-            this.dob.Size = new System.Drawing.Size(296, 34);
-            this.dob.TabIndex = 37;
-            // 
-            // RadioMale
-            // 
-            this.RadioMale.AutoSize = true;
-            this.RadioMale.Location = new System.Drawing.Point(92, 195);
-            this.RadioMale.Name = "RadioMale";
-            this.RadioMale.Size = new System.Drawing.Size(60, 31);
-            this.RadioMale.TabIndex = 38;
-            this.RadioMale.TabStop = true;
-            this.RadioMale.Text = "ប្រុស";
-            this.RadioMale.UseVisualStyleBackColor = true;
-            // 
-            // RadioFemale
-            // 
-            this.RadioFemale.AutoSize = true;
-            this.RadioFemale.Location = new System.Drawing.Point(216, 195);
-            this.RadioFemale.Name = "RadioFemale";
-            this.RadioFemale.Size = new System.Drawing.Size(50, 31);
-            this.RadioFemale.TabIndex = 39;
-            this.RadioFemale.TabStop = true;
-            this.RadioFemale.Text = "ស្រី";
-            this.RadioFemale.UseVisualStyleBackColor = true;
-            // 
-            // gender
-            // 
-            this.gender.FlatAppearance.BorderSize = 0;
-            this.gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gender.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
-            this.gender.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.gender.IconChar = FontAwesome.Sharp.IconChar.Male;
-            this.gender.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.gender.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.gender.IconSize = 30;
-            this.gender.Location = new System.Drawing.Point(-1, 187);
-            this.gender.Name = "gender";
-            this.gender.Size = new System.Drawing.Size(83, 49);
-            this.gender.TabIndex = 40;
-            this.gender.Text = "ភេទ";
-            this.gender.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.gender.UseVisualStyleBackColor = true;
-            // 
-            // iconButton8
-            // 
-            this.iconButton8.FlatAppearance.BorderSize = 0;
-            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton8.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
-            this.iconButton8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.iconButton8.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.IconSize = 30;
-            this.iconButton8.Location = new System.Drawing.Point(3, 26);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Size = new System.Drawing.Size(32, 35);
-            this.iconButton8.TabIndex = 42;
-            this.iconButton8.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.ForeColor = System.Drawing.Color.MistyRose;
-            this.panel5.Location = new System.Drawing.Point(2, 60);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(343, 3);
-            this.panel5.TabIndex = 41;
-            // 
-            // TXT_NO
-            // 
-            this.TXT_NO.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.TXT_NO.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TXT_NO.Font = new System.Drawing.Font("Khmer OS Siemreap", 12F);
-            this.TXT_NO.ForeColor = System.Drawing.Color.Black;
-            this.TXT_NO.Location = new System.Drawing.Point(41, 27);
-            this.TXT_NO.Name = "TXT_NO";
-            this.TXT_NO.Size = new System.Drawing.Size(299, 30);
-            this.TXT_NO.TabIndex = 43;
-            this.TXT_NO.TextChanged += new System.EventHandler(this.TXT_NO_TextChanged);
-            // 
             // Frm_Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 27F);
@@ -503,6 +523,7 @@ namespace Loan.FORMS
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Frm_Employee";
             this.Text = "Frm_Employee";
+            this.Load += new System.EventHandler(this.Frm_Employee_Load);
             this.panel_Content.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DATAEMP)).EndInit();
             this.panel_Left.ResumeLayout(false);
@@ -544,5 +565,6 @@ namespace Loan.FORMS
         private FontAwesome.Sharp.IconButton iconButton8;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox TXT_NO;
+        private FontAwesome.Sharp.IconButton CLEAR;
     }
 }
