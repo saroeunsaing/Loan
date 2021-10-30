@@ -30,6 +30,9 @@ namespace Loan.FORMS
         private void InitializeComponent()
         {
             this.panel_Left = new System.Windows.Forms.Panel();
+            this.TXT_NATION = new System.Windows.Forms.TextBox();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.CLEAR = new FontAwesome.Sharp.IconButton();
             this.TXT_NAMEEN = new System.Windows.Forms.TextBox();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
@@ -61,9 +64,6 @@ namespace Loan.FORMS
             this.panel_Content = new System.Windows.Forms.Panel();
             this.DGV_DATACUS = new System.Windows.Forms.DataGridView();
             this.Btn_Exit = new FontAwesome.Sharp.IconButton();
-            this.TXT_NATION = new System.Windows.Forms.TextBox();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel_Left.SuspendLayout();
             this.panel_Content.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DATACUS)).BeginInit();
@@ -109,6 +109,42 @@ namespace Loan.FORMS
             this.panel_Left.Size = new System.Drawing.Size(350, 565);
             this.panel_Left.TabIndex = 1;
             // 
+            // TXT_NATION
+            // 
+            this.TXT_NATION.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.TXT_NATION.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TXT_NATION.Font = new System.Drawing.Font("Khmer OS Siemreap", 12F);
+            this.TXT_NATION.ForeColor = System.Drawing.Color.Black;
+            this.TXT_NATION.Location = new System.Drawing.Point(46, 258);
+            this.TXT_NATION.Name = "TXT_NATION";
+            this.TXT_NATION.Size = new System.Drawing.Size(299, 30);
+            this.TXT_NATION.TabIndex = 73;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
+            this.iconButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Flag;
+            this.iconButton2.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 30;
+            this.iconButton2.Location = new System.Drawing.Point(5, 257);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(32, 35);
+            this.iconButton2.TabIndex = 75;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel8.ForeColor = System.Drawing.Color.MistyRose;
+            this.panel8.Location = new System.Drawing.Point(4, 291);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(343, 3);
+            this.panel8.TabIndex = 74;
+            // 
             // CLEAR
             // 
             this.CLEAR.FlatAppearance.BorderSize = 0;
@@ -126,6 +162,7 @@ namespace Loan.FORMS
             this.CLEAR.Text = "សំអាត | CLEAR";
             this.CLEAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.CLEAR.UseVisualStyleBackColor = true;
+            this.CLEAR.Click += new System.EventHandler(this.CLEAR_Click);
             // 
             // TXT_NAMEEN
             // 
@@ -396,6 +433,7 @@ namespace Loan.FORMS
             this.DELETE.Text = "លុប | DELETE";
             this.DELETE.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DELETE.UseVisualStyleBackColor = true;
+            this.DELETE.Click += new System.EventHandler(this.DELETE_Click);
             // 
             // TXT_ADDRESS
             // 
@@ -495,6 +533,7 @@ namespace Loan.FORMS
             this.DGV_DATACUS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_DATACUS.Size = new System.Drawing.Size(590, 512);
             this.DGV_DATACUS.TabIndex = 8;
+            this.DGV_DATACUS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_DATACUS_CellContentClick);
             // 
             // Btn_Exit
             // 
@@ -511,42 +550,6 @@ namespace Loan.FORMS
             this.Btn_Exit.Size = new System.Drawing.Size(35, 35);
             this.Btn_Exit.TabIndex = 6;
             this.Btn_Exit.UseVisualStyleBackColor = true;
-            // 
-            // TXT_NATION
-            // 
-            this.TXT_NATION.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.TXT_NATION.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TXT_NATION.Font = new System.Drawing.Font("Khmer OS Siemreap", 12F);
-            this.TXT_NATION.ForeColor = System.Drawing.Color.Black;
-            this.TXT_NATION.Location = new System.Drawing.Point(46, 258);
-            this.TXT_NATION.Name = "TXT_NATION";
-            this.TXT_NATION.Size = new System.Drawing.Size(299, 30);
-            this.TXT_NATION.TabIndex = 73;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
-            this.iconButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Flag;
-            this.iconButton2.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 30;
-            this.iconButton2.Location = new System.Drawing.Point(5, 257);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(32, 35);
-            this.iconButton2.TabIndex = 75;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel8.ForeColor = System.Drawing.Color.MistyRose;
-            this.panel8.Location = new System.Drawing.Point(4, 291);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(343, 3);
-            this.panel8.TabIndex = 74;
             // 
             // Frm_Customer
             // 

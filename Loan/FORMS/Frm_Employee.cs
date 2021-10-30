@@ -93,7 +93,7 @@ namespace Loan.FORMS
             SQL.AddParam("@phone", TXT_PHONE.Text);
             SQL.AddParam("@email", TXT_EMAIL.Text);
             SQL.AddParam("@address", TXT_ADDRESS.Text);
-            SQL.ExecQuery("UPDATE Employees SET​​ Namekh=@namekh,Nameen=@nameen,Gender=@gender,Dob=@dob,phone=@phone,email=@email,address=@address WHERE No=@no);", true);
+            SQL.ExecQuery("UPDATE Employees SET​​ Namekh=@namekh,Nameen=@nameen,Gender=@gender,Dob=@dob,phone=@phone,email=@email,address=@address WHERE No=@no;", true);
            //SQL.ExecQuery("UPDATE type SET namekh=@namekh,nameen=@nameen WHERE id = @id;", true);
 
             //REPORT & ABORT ON ERRORS
@@ -138,13 +138,17 @@ namespace Loan.FORMS
                 TXT_NO.Text = row.Cells["no"].Value.ToString();
                 TXT_NAMEKH.Text = row.Cells["namekh"].Value.ToString();
                 TXT_NAMEEN.Text = row.Cells["nameen"].Value.ToString();
-                if (row.Cells["gender"].Value.ToString() == "Female")
+                if (row.Cells["gender"].Value.ToString() == "Male")
                 {
-                    RadioFemale.Checked = true;
+                    
+                    RadioMale.Checked = true;
+                   
                 }
                 else
                 {
-                    RadioMale.Checked = true;
+                    RadioFemale.Checked = true;
+                   
+                   
                 }
                 //TXT_GENDER.Text = row.Cells["gender"].Value.ToString();
                 dob.Text = row.Cells["dob"].Value.ToString();

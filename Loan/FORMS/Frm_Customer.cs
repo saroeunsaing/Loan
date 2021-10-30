@@ -70,7 +70,7 @@ namespace Loan.FORMS
             if (SQL.HasException(true)) { }
 
             MessageBox.Show("បង្កើតថ្មីបានជោគជ័យ");
-            SQL.Retrive("select * from Customer", DGV_DATACUS);
+            SQL.Retrive("select * from Customers", DGV_DATACUS);
         }
 
         private void EDIT_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace Loan.FORMS
             SQL.AddParam("@phone", TXT_PHONE.Text);
             SQL.AddParam("@email", TXT_EMAIL.Text);
             SQL.AddParam("@address", TXT_ADDRESS.Text);
-            SQL.ExecQuery("UPDATE Customers SET Namekh=@namekh,Nameen=@nameen,Gender=@gender,Dob=@dob,Nation=@nation,phone=@phone,email=@email,address=@address WHERE no=@no);", true);
+            SQL.ExecQuery("UPDATE Customers SET Namekh=@namekh,Nameen=@nameen,Gender=@gender,dob=@dob,Nation=@nation,phone=@phone,email=@email,address=@address WHERE No = @no;", true);
 
             //REPORT & ABORT ON ERRORS
             if (SQL.HasException(true)) { }
@@ -97,5 +97,62 @@ namespace Loan.FORMS
             MessageBox.Show("កែប្រែបានជោគជ័យ");
             SQL.Retrive("select * from Customers", DGV_DATACUS);
         }
+
+        private void DELETE_Click(object sender, EventArgs e)
+        {
+            SQL.AddParam("@no", TXT_NO.Text);
+            SQL.ExecQuery("DELETE FROM Customers WHERE No = @no;", true);
+            if (SQL.HasException(true)) { }
+
+            MessageBox.Show("លុបបានជោគជ័យ");
+            SQL.Retrive("select * from Customers", DGV_DATACUS);
+        }
+
+        private void CLEAR_Click(object sender, EventArgs e)
+        {
+            TXT_NO.Text = "";
+            TXT_NAMEKH.Text = "";
+            TXT_NAMEEN.Text = "";
+            RadioMale.Checked = false;
+            RadioFemale.Checked = false;
+            dob.Text = "";
+            TXT_NATION.Text = "";
+            TXT_PHONE.Text = "";
+            TXT_EMAIL.Text = "";
+            TXT_ADDRESS.Text = "";
+        }
+
+        private void DGV_DATACUS_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row;
+
+            row = DGV_DATACUS.Rows[e.RowIndex];
+            TXT_NO.Text = row.Cells["no"].Value.ToString();
+            TXT_NAMEKH.Text = row.Cells["namekh"].Value.ToString();
+            TXT_NAMEEN.Text = row.Cells["nameen"].Value.ToString();
+            if (row.Cells["gender"].Value.ToString() == "Male")
+            {
+
+                RadioMale.Checked = true;
+                RadioFemale.Checked = false;
+            }
+            else
+            {
+                RadioFemale.Checked = true;
+                RadioMale.Checked = false;
+
+            }
+            //TXT_GENDER.Text = row.Cells["gender"].Value.ToString();
+            dob.Text = row.Cells["dob"].Value.ToString();
+            TXT_NATION.Text = row.Cells["nation"].Value.ToString();
+            TXT_PHONE.Text = row.Cells["phone"].Value.ToString();
+            TXT_EMAIL.Text = row.Cells["email"].Value.ToString();
+            TXT_ADDRESS.Text = row.Cells["address"].Value.ToString();
+
+        }
+    }
+
     }
 }

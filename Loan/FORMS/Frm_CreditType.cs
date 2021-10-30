@@ -102,5 +102,12 @@ namespace Loan.FORMS
 
             }
         }
+
+        private void CLEAR_Click(object sender, EventArgs e)
+        {
+            TXT_ID.Text = "";
+            TXT_NAMEKH.Text = "";
+            TXT_NAMEEN.Text = "";
+        }
     }
 }

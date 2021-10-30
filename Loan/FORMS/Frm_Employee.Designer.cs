@@ -212,9 +212,9 @@ namespace Loan.FORMS
             this.gender.IconColor = System.Drawing.Color.WhiteSmoke;
             this.gender.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.gender.IconSize = 30;
-            this.gender.Location = new System.Drawing.Point(-1, 187);
+            this.gender.Location = new System.Drawing.Point(-1, 180);
             this.gender.Name = "gender";
-            this.gender.Size = new System.Drawing.Size(83, 49);
+            this.gender.Size = new System.Drawing.Size(76, 56);
             this.gender.TabIndex = 40;
             this.gender.Text = "ភេទ";
             this.gender.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

@@ -45,6 +45,7 @@ namespace Loan.FORMS
             this.Btn_Exit = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DGV_DATA = new System.Windows.Forms.DataGridView();
+            this.CLEAR = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DATA)).BeginInit();
@@ -53,6 +54,7 @@ namespace Loan.FORMS
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.CLEAR);
             this.panel1.Controls.Add(this.DELETE);
             this.panel1.Controls.Add(this.EDIT);
             this.panel1.Controls.Add(this.SAVE);
@@ -82,7 +84,7 @@ namespace Loan.FORMS
             this.DELETE.IconColor = System.Drawing.Color.DarkSalmon;
             this.DELETE.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.DELETE.IconSize = 30;
-            this.DELETE.Location = new System.Drawing.Point(635, 207);
+            this.DELETE.Location = new System.Drawing.Point(635, 177);
             this.DELETE.Name = "DELETE";
             this.DELETE.Size = new System.Drawing.Size(159, 35);
             this.DELETE.TabIndex = 16;
@@ -101,7 +103,7 @@ namespace Loan.FORMS
             this.EDIT.IconColor = System.Drawing.Color.DarkSalmon;
             this.EDIT.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.EDIT.IconSize = 30;
-            this.EDIT.Location = new System.Drawing.Point(635, 144);
+            this.EDIT.Location = new System.Drawing.Point(635, 119);
             this.EDIT.Name = "EDIT";
             this.EDIT.Size = new System.Drawing.Size(159, 35);
             this.EDIT.TabIndex = 15;
@@ -277,6 +279,25 @@ namespace Loan.FORMS
             this.DGV_DATA.TabIndex = 2;
             this.DGV_DATA.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_DATA_CellContentClick);
             // 
+            // CLEAR
+            // 
+            this.CLEAR.FlatAppearance.BorderSize = 0;
+            this.CLEAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CLEAR.Font = new System.Drawing.Font("Khmer OS Siemreap", 10F);
+            this.CLEAR.ForeColor = System.Drawing.Color.LightCoral;
+            this.CLEAR.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.CLEAR.IconColor = System.Drawing.Color.DarkSalmon;
+            this.CLEAR.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.CLEAR.IconSize = 30;
+            this.CLEAR.Location = new System.Drawing.Point(635, 234);
+            this.CLEAR.Name = "CLEAR";
+            this.CLEAR.Size = new System.Drawing.Size(159, 35);
+            this.CLEAR.TabIndex = 45;
+            this.CLEAR.Text = "សំអាត | CLEAR";
+            this.CLEAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.CLEAR.UseVisualStyleBackColor = true;
+            this.CLEAR.Click += new System.EventHandler(this.CLEAR_Click);
+            // 
             // Frm_CreditType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 27F);
@@ -317,5 +338,6 @@ namespace Loan.FORMS
         private FontAwesome.Sharp.IconButton Btn_Exit;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView DGV_DATA;
+        private FontAwesome.Sharp.IconButton CLEAR;
     }
 }
