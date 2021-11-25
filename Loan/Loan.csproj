@@ -83,6 +83,12 @@
     <Compile Include="FORMS\Frm_Employee.Designer.cs">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Frm_Loan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Frm_Loan.Designer.cs">
+      <DependentUpon>Frm_Loan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\Frm_Users.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Frm_Employee.resx">
       <DependentUpon>Frm_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Frm_Loan.resx">
+      <DependentUpon>Frm_Loan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Frm_Users.resx">
       <DependentUpon>Frm_Users.cs</DependentUpon>
